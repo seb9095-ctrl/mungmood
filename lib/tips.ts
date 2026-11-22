@@ -1,28 +1,45 @@
-export type MoodType = 'sad' | 'angry' | 'relaxed' | 'happy';
+export type Mood = "sad" | "angry" | "relaxed" | "happy";
+
 export interface MoodInfo {
-  id: MoodType; label: string; emoji: string;
-  colorClass: string; bgClass: string; borderClass: string; tip: string;
+  label: string;
+  emoji: string;
+  colorClass: string;
+  barClass: string;
+  message: string;
+  tip: string;
 }
-export const MOOD_ORDER: MoodType[] = ['sad', 'angry', 'relaxed', 'happy'];
-export const MOOD_CONFIG: Record<MoodType, MoodInfo> = {
-  sad: {
-    id: 'sad', label: 'Sad', emoji: '😢',
-    colorClass: 'bg-blue-500', bgClass: 'bg-blue-50', borderClass: 'border-blue-200',
-    tip: 'Spend some quiet time together, offer a favorite toy, and check whether routine, food, or walks have changed recently. If low mood lasts several days, consult a vet.',
-  },
-  angry: {
-    id: 'angry', label: 'Angry', emoji: "😠",
-    colorClass: 'bg-red-500', bgClass: 'bg-red-50', borderClass: 'border-red-200',
-    tip: 'Give the dog space and avoid reaching toward its face. Remove the likely trigger (other dogs, loud noise, strangers) and let it calm down before interacting.',
+
+export const MOOD_INFO: Record<Mood, MoodInfo> = {
+  happy: {
+    label: "Happy",
+    emoji: "🐶",
+    colorClass: "bg-amber-100 text-amber-800 border-amber-200",
+    barClass: "bg-amber-400",
+    message: "Your dog looks happy and upbeat!",
+    tip: "Great time for praise, interactive play, a short training session, or an outdoor walk."
   },
   relaxed: {
-    id: 'relaxed', label: 'Relaxed', emoji: '😌',
-    colorClass: 'bg-emerald-500', bgClass: 'bg-emerald-50', borderClass: 'border-emerald-200',
-    tip: 'Your dog looks relaxed (maybe sleepy or resting). Keep the environment quiet and let it rest; this is a good time for gentle petting.',
+    label: "Relaxed",
+    emoji: "😌",
+    colorClass: "bg-emerald-100 text-emerald-800 border-emerald-200",
+    barClass: "bg-emerald-400",
+    message: "Your dog looks relaxed (maybe sleepy or resting).",
+    tip: "Let your dog rest peacefully in a comfortable spot without unnecessary disturbance."
   },
-  happy: {
-    id: 'happy', label: 'Happy', emoji: '😊',
-    colorClass: 'bg-amber-500', bgClass: 'bg-amber-50', borderClass: 'border-amber-200',
-    tip: 'Your dog seems happy and engaged. Great moment for play, a short training session, or a walk!',
+  sad: {
+    label: "Sad",
+    emoji: "🥺",
+    colorClass: "bg-blue-100 text-blue-800 border-blue-200",
+    barClass: "bg-blue-400",
+    message: "Your dog may be feeling down or low-energy.",
+    tip: "Offer gentle reassurance and bonding time. If this mood persists alongside appetite or behavior changes, consult a veterinarian."
   },
+  angry: {
+    label: "Angry",
+    emoji: "😠",
+    colorClass: "bg-red-100 text-red-800 border-red-200",
+    barClass: "bg-red-500",
+    message: "Your dog appears tense or agitated.",
+    tip: "Safety first: give your dog space, avoid reaching toward its face, and calmly remove nearby triggers."
+  }
 };
