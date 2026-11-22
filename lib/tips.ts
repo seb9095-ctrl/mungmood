@@ -11,7 +11,7 @@ export const MOOD_CONFIG: Record<MoodType, MoodInfo> = {
     tip: 'Spend some quiet time together, offer a favorite toy, and check whether routine, food, or walks have changed recently. If low mood lasts several days, consult a vet.',
   },
   angry: {
-    id: 'angry', label: 'Angry', emoji: '��',
+    id: 'angry', label: 'Angry', emoji: "😠",
     colorClass: 'bg-red-500', bgClass: 'bg-red-50', borderClass: 'border-red-200',
     tip: 'Give the dog space and avoid reaching toward its face. Remove the likely trigger (other dogs, loud noise, strangers) and let it calm down before interacting.',
   },
